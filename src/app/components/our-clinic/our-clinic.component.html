@@ -1,0 +1,105 @@
+<div class="main-box">
+  <p class="ribbon">
+    <a (click)="scrollView('#facility')">{{clinic.our}} {{clinic.facility}}</a> <span>|</span> <a (click)="scrollView('#doctor')">{{clinic.dr}} {{clinic.henry}}</a>
+  </p>
+
+  <div class="hero">
+    <div class="slider" id="clinicSlider">
+        <div class="slide" *ngFor="let slid of clinic.slides">
+          <img src="{{slid.img}}" class="hidden-sm hidden-xs" alt="">
+          <div class="abs">
+            <div class="container wide-cont">
+              <div class="row">
+                <div class="col-lg-6 col-md-5"></div>
+                <div class="col-lg-6 col-md-7 col-sm-9">
+                  <div class="white-box">
+                    <h5>{{clinic.title}}</h5>
+                    <pre><h1>{{slid.title}}</h1></pre>
+                    <p>{{slid.text}} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img src="{{slid.img}}" class="visible-sm visible-xs" alt="">
+          <div class="circles visible-xs">
+            <div *ngFor="let test of clinic.slides; let is=first" [ngClass]="{'aktiv': is}">
+              <svg height="14" width="14"><circle cx="7" cy="7" r="6" stroke="white" stroke-width="1" /></svg>
+            </div>
+          </div>
+        </div>
+      <div class="arrows hidden-xs">
+        <div class="left-arrow" (click)="moveLeft()">
+          <img src="assets/img/arrow-left.png" alt="">
+        </div>
+        <div class="right-arrow" (click)="moveRight()">
+          <img src="assets/img/arrow-right.png" alt="">
+        </div>
+        <div class="counter">
+          <p>{{counter}}<br>/<br>{{leng}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="facility" id="facility">
+    <div class="container rel">
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="distance"></div>
+          <div class="diff">
+            <h2 class="with-line">{{clinic.our}} <hr><br>{{clinic.facility}}</h2><br class="hidden-sm hidden-xs">
+            <p [innerHTML]="clinic.text1">{{clinic.text1}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="square"></div>
+    </div>
+    <img src="assets/img/our2.png" class="img-responsive specific" alt="">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 visible-sm"></div>
+        <div class="col-md-6 col-sm-8 not">
+          <img src="assets/img/paris.png" class="img-responsive paris" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc" id="doctor">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 class="with-line">{{clinic.dr}} <hr><br>{{clinic.henry}}</h2><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <p>{{clinic.p1}}</p><br>
+          <p>{{clinic.p2}}</p>
+        </div>
+        <div class="col-sm-6">
+          <p class="semibold uppercase mvd">{{clinic.listTitle}}</p>
+          <ul>
+            <li *ngFor="let item of clinic.list">{{item}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="more">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-6">
+          <h2>
+            {{clinic.find}}
+          </h2>
+          <a routerLink="/{{lang}}/treatments" class="big-link">{{clinic.link}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

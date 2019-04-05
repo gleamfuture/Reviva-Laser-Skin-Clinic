@@ -1,0 +1,144 @@
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="bread"><a routerLink="/{{lang}}/treatments">{{sin.treat}}</a><span class="divider">/</span><a routerLink="/{{lang}}/concerns/{{data.cLink}}">{{data.name}}</a><span class="divider">/</span><span class="name">{{treatment.name}}</span></p>
+        <h1>{{treatment.name}}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="single-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>{{sin.what}} <span class="capitalize">{{treatment.name}}</span>?</h2><br><br>
+        <p class="two-column"[innerHTML]="treatment.what"></p><br><br><br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5 col-sm-9">
+        <h2 class="capitalize">{{sin.both}}</h2><br>
+        <p class="inside" [innerHTML]="treatment.before"></p>
+      </div>
+      <div class="col-md-7 col-sm-12 col-xs-12">
+        <div class="slider" id="mini">
+          <div class="slide" *ngFor="let last of treatment.slideimg">
+            <div class="row">
+              <div class="col-sm-6 col-xs-6">
+                <img src="{{last.before}}" class="img-responsive bef" alt="">
+                <p>{{sin.before}}</p>
+              </div>
+              <div class="col-sm-6 col-xs-6">
+                <img src="{{last.after}}" class="img-responsive bef" alt="">
+                <p>{{sin.after}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="circles visible-xs">
+            <div *ngFor="let test of treatment.slideimg; let is=first" [ngClass]="{'aktiv': is}">
+              <svg height="14" width="14"><circle cx="7" cy="7" r="6" stroke="white" stroke-width="1" /></svg>
+            </div>
+          </div>
+        </div>
+        <div class="arrows hidden-xs">
+          <div class="counter">
+            <p>{{counter}}<br>/<br>{{leng}}</p>
+          </div>
+          <div class="left-arrow" (click)="moveLeft()">
+            <img src="assets/img/arrow-left.png" alt="">
+          </div>
+          <div class="right-arrow" (click)="moveRight()">
+            <img src="assets/img/arrow-right.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 ben">
+        <div class="benefit-box">
+          <h2>{{sin.ben}}</h2><br>
+          <div class="content">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>{{treatment.benefitText}}</p><br>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6" *ngFor="let item of treatment.benefits">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td><img src="assets/img/check.png" alt=""></td>
+                      <td>{{item}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="questions">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <hr>
+        <div class="q-box" *ngFor="let fa of treatment.qa; let i = index">
+          <div class="circle-box" (click)="openQ(i)">
+            <img src="assets/img/plus.png" class="test{{i}}" alt="">
+            <img src="assets/img/minus.png" class="test{{i}}" style="display: none;" alt="">
+          </div>
+          <div class="text-box">
+            <h2>{{fa.question}}?</h2><br>
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <p id="showme{{i}}" style="display: none;" [innerHTML]="fa.answer"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="other">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>{{sin.other}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 push-d" *ngFor="let treat of data.treatments | slice:0:3; let i=index">
+        <div class="ind">
+          <hr>
+          <h3>{{treat.name}}</h3>
+          <p>{{treat.shortDescription}}</p>
+          <a routerLink="/{{lang}}/treatments/{{treat.link}}" class="big-link" (click)="routeChange()">{{sin.link}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="more">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>
+          {{sin.make}}
+        </h2>
+        <a routerLink="/{{lang}}/contact" class="big-link">{{sin.contact}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-menu></app-menu>

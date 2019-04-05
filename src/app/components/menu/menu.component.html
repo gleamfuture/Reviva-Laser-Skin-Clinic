@@ -1,0 +1,49 @@
+<div class="menu-body">
+  <div class="menu">
+    <div class="child">
+      <div class="row">
+        <div class="col-sm-12 hidden-sm hidden-xs">
+          <h1>{{menu.list}}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-6">
+          <div class="menu-item">
+            <h5>{{menu.h1}}</h5>
+            <ul>
+              <li *ngFor="let item of array1"><a (click)="routePage(item.link)">{{item.name}}</a></li>
+            </ul>
+            <img src="assets/img/flower.png" class="flower" alt="">
+          </div>
+          <div class="menu-item">
+            <h5>{{menu.h2}}</h5>
+            <ul>
+              <li *ngFor="let item of array2"><a  (click)="routePage(item.link)">{{item.name}}</a></li>
+            </ul>
+            <img src="assets/img/flower.png" class="flower" alt="">
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-6">
+          <div class="menu-item">
+            <h5>{{menu.h3}}</h5>
+            <ul>
+              <li *ngFor="let item of array3"><a  (click)="routePage(item.link)">{{item.name}}</a></li>
+            </ul>
+            <img src="assets/img/flower.png" class="flower" alt="">
+          </div>
+          <div class="menu-item">
+            <h5>{{menu.h4}}</h5>
+            <ul>
+              <li *ngFor="let item of array4"><a  (click)="routePage(item.link)">{{item.name}}</a></li>
+            </ul>
+            <img src="assets/img/flower.png" class="flower" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="toggler" (click)="crazy()">
+    <h5><img src="assets/img/gold.png" class="gold" alt="">{{menu.list}}</h5>
+  </div>
+  <div class="white-over"></div>
+</div>

@@ -1,0 +1,45 @@
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="bread"><a routerLink="/{{lang}}/treatments">{{other.treat}}</a><span class="divider">/</span><span class="name">{{use.name}}</span></p>
+        <h1>{{use.name}}</h1>
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-md-9 col-sm-9">
+        <p>{{use.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="chemical">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let item of use.treatments; let i=index">
+      <div class="col-sm-6 box">
+          <h3>{{item.name}}</h3>
+          <p [innerHTML]="item.shortDescription"></p><br><br class="hidden-xs">
+          <a routerLink="/{{lang}}/treatments/{{item.link}}" class="big-link">{{other.link}}</a>
+      </div>
+      <div *ngIf="((i+1) % 2)==0" class="clearfix visible-md visible-sm"></div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="more">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>
+          {{other.quest}}? <br>{{other.contact}}
+        </h2>
+        <a routerLink="/{{lang}}/contact" class="big-link">{{other.find}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-menu></app-menu>

@@ -1,0 +1,47 @@
+<div class="navbar navbar-default">
+			<div class="container wide-cont">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" (click)="navIn()" aria-expanded="false">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a routerLink="/{{lang}}"><img src="assets/img/reviva-logo.png" class="img-responsive"><span class="logo-text hidden-xs">Reviva <br>Laser <br class="hidden-sm">Skin <br>Clinic</span>
+					</a>
+				</div>
+        <ul class="nav nav-lang-drop navbar-nav navbar-right rig visible-sm visible-xs adjusted">
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{langDisplay}}<span class="chev">&#9662;</span></a>
+            <ul class="dropdown-menu languages">
+              <li (click)="hereChange('en')">English</li>
+              <!-- <li (click)="hereChange('ch')">简体中文</li> -->
+              <li (click)="hereChange('ch')">中文</li>
+            </ul>
+          </li>
+          <!-- <li class="search" (click)="modalSearch()"><img src="assets/img/search.png" alt=""></li> -->
+        </ul>
+				<div class="navbar-collapse" id="myNavbar">
+					<ul class="nav nav-menu-pop navbar-nav navbar-left routes">
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/{{lang}}" (click)="exitMenu()">{{nav.t1}}</a></li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/{{lang}}/our-clinic" (click)="exitMenu()">{{nav.t2}}</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/{{lang}}/treatments" (click)="exitMenu()">{{nav.t3}}</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a href="https://blog.revivamd.com" (click)="exitMenu()">{{nav.blog}}</a></li>
+						<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/{{lang}}/contact" (click)="exitMenu()">{{nav.t4}}</a></li>
+					</ul>
+					<img src="assets/img/close.png" class="menu-exit" (click)="exitMenu()" alt="">
+
+          <ul class="nav nav-lang-drop navbar-nav navbar-right rig hidden-sm hidden-xs">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{langDisplay}}<span class="chev">&#9662;</span></a>
+              <ul class="dropdown-menu languages">
+                <li (click)="hereChange('en')">English</li>
+                <!-- <li (click)="hereChange('ch')">简体中文</li> -->
+                <li (click)="hereChange('ch')">中文</li>
+              </ul>
+            </li>
+            <!-- <li class="search" (click)="modalSearch()"><img src="assets/img/search.png" alt=""></li> -->
+          </ul>
+				</div>
+			</div>
+		</div>
+
+
+    <!--<app-search></app-search>-->

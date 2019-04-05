@@ -1,0 +1,80 @@
+<div class="main-box">
+  <div class="hero">
+    <div class="slider" id="treatmentSlider">
+        <div class="slide" *ngFor="let slid of data.slides">
+          <img src="{{slid.img}}" class="hidden-sm hidden-xs" alt="">
+          <div class="abs">
+            <div class="container wide-cont">
+              <div class="row">
+                <div class="col-lg-6 col-md-7">
+                  <div class="white-box">
+                    <h5>{{slid.title}}</h5>
+                    <h1>{{slid.top}}</h1>
+                    <div class="row">
+                      <div class="col-md-10 col-sm-9">
+                        <p>{{slid.text}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img src="{{slid.img}}" class="visible-sm visible-xs" alt="">
+          <div class="circles visible-xs">
+            <div *ngFor="let test of data.slides; let is=first" [ngClass]="{'aktiv': is}">
+              <svg height="14" width="14"><circle cx="7" cy="7" r="6" stroke="white" stroke-width="1" /></svg>
+            </div>
+          </div>
+        </div>
+      <div class="arrows hidden-xs">
+        <div class="left-arrow" (click)="moveLeft()">
+          <img src="assets/img/arrow-left.png" alt="">
+        </div>
+        <div class="right-arrow" (click)="moveRight()">
+          <img src="assets/img/arrow-right.png" alt="">
+        </div>
+        <div class="counter">
+          <p>{{counter}}<br>/<br>{{leng}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="concerns">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 class="with-line">{{data.conc}}<hr></h2><br>
+        </div>
+      </div><br>
+      <div class="row list">
+        <div *ngFor="let concern of concerns; let i=index">
+        <div class="col-lg-4 col-md-4 col-sm-6">
+          <a routerLink="/{{lang}}/concerns/{{concern.cLink}}">
+            <img src="{{concern.imgUrl}}" class="img-responsive" alt="">
+            <h3>{{concern.name}}</h3>
+          </a>
+        </div>
+        <div *ngIf="((i+1) % 3)==0" class="clearfix visible-md"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="more">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>
+            {{data.ques}}? <br>{{data.contact}}
+          </h2>
+          <a routerLink="/{{lang}}/contact" class="big-link">{{data.link}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<app-menu></app-menu>

@@ -1,0 +1,129 @@
+<div class="main-box">
+  
+  <div class="hero">
+    <div class="slider" id="homeSlider">
+        <div class="slide" *ngFor="let sli of home.slides">
+          <img src="{{sli.img}}" class="hidden-sm hidden-xs" alt="">
+          <div class="abs">
+            <div class="container wide-cont">
+              <div class="row">
+                <div class="col-sm-9">
+                  <pre><h1>{{sli.text}}</h1></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img src="{{sli.img}}" class="visible-sm visible-xs" alt="">
+          <div class="circles visible-xs">
+            <div *ngFor="let test of home.slides; let is=first" [ngClass]="{'aktiv': is}">
+              <svg height="14" width="14"><circle cx="7" cy="7" r="6" stroke="white" stroke-width="1" /></svg>
+            </div>
+          </div>
+        </div>
+      <div class="arrows hidden-xs">
+        <div class="left-arrow" (click)="moveLeft()">
+          <img src="assets/img/arrow-left.png" alt="">
+        </div>
+        <div class="right-arrow" (click)="moveRight()">
+          <img src="assets/img/arrow-right.png" alt="">
+        </div>
+        <div class="counter">
+          <p>{{counter}}<br>/<br>{{leng}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="our">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-10">
+          <h5>{{home.title1}}</h5><br>
+          <p class="home-text">{{home.text1}}</p>
+          <a routerLink="/{{lang}}/our-clinic" class="big-link">{{home.linktext}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="for">
+    <div class="container-fluid">
+      <div class="row no-gutter">
+        <div class="col-md-8 col-sm-12 lines">
+          <img src="assets/img/home1.png" class="img-responsive" alt="">
+          <div class="top hidden-xs"></div>
+          <div class="vert hidden-sm hidden-xs"></div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <div class="distance hidden-sm hidden-xs"></div>
+          <div class="push-left">
+            <h2 class="with-line">{{home.for}} <hr><br><pre>{{home.rest1}}</pre></h2><br class="hidden-xs">
+            <a routerLink="/{{lang}}/concerns/finelines-wrinkles" class="lefted">{{home.link2}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="row no-gutter">
+        <div class="col-md-4 hidden-sm hidden-xs">
+          <div class="distance"></div>
+          <div class="rel">
+            <div class="push-right">
+              <h2 class="with-line">{{home.for}} <hr><br>{{home.rest2}}</h2><br class="hidden-xs">
+              <a routerLink="/{{lang}}/concerns/pigmentation" class="lefted">{{home.link2}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-md-8 col-sm-12 lines right">
+          <img src="assets/img/home2.png" class="img-responsive sm-move" alt="">
+          <div class="sm-line"></div>
+        </div>
+        <div class="col-md-4 col-sm-12 visible-sm visible-xs">
+          <div class="distance hidden-sm hidden-xs"></div>
+          <div class="rel">
+            <div class="push-right">
+              <h2 class="with-line">{{home.for}} <hr><br>{{home.rest2}}</h2><br>
+              <a routerLink="/{{lang}}/concerns/pigmentation" class="lefted">{{home.link2}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row no-gutter">
+        <div class="col-md-8 col-sm-12 lines third-home">
+          <img src="assets/img/home3.png" class="img-responsive" alt="">
+          <div class="square hidden-sm hidden-xs"></div>
+        </div>
+        <div class="col-sm-4 col-sm-12 third-home no-up">
+          <div class="distance hidden-sm hidden-xs"></div>
+          <div class="push-left">
+            <h2 class="with-line">{{home.for}}<hr><br><pre>{{home.rest3}}</pre></h2><br>
+            <a  routerLink="/{{lang}}/concerns/lifting-tightening" class="lefted">{{home.link2}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="other">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-7 col-sm-5">
+          <h5><span>{{home.title2}}</span> <hr></h5>
+        </div>
+        <div class="col-lg-4 col-md-5 col-sm-7 text-center spread hidden-xs">
+          <div class="repair"></div>
+          <a routerLink="/{{lang}}/treatments" class="big-link">{{home.big}}</a>
+        </div>
+      </div>
+      <div class="row acne">
+        <div class="col-sm-4" *ngFor="let treat of concerns; let i=index">
+          <div *ngIf="i < 6 && i > 2">
+            <img src="{{treat.imgUrl}}" class="img-responsive" alt="">
+            <h3>{{treat.name}}</h3>
+            <a routerLink="/{{lang}}/concerns/{{treat.cLink}}" class="big-link">{{home.link2}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,124 @@
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-sm-11">
+        <p class="bread">{{data.title}}</p>
+        <h2>{{data.book}} <span class="under">{{data.phone}}</span> <br/><span>{{data.orEmail}}</span> <span class="under">staff@revivamd.com</span> <!--{{data.book2}} <span class="under nn" (click)="go('#target')">{{data.form}}</span> {{data.book3}} --> <br><br></h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div class="form-content" id="target">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>{{data.inquiry}}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-narrow">
+          <div class="row">
+            <div class="col-md-6 col-sm-9">
+              <p class="go-in">{{data.respond}} </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="text" placeholder="{{data.pla1}}" class="form-control myInput">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="text" placeholder="{{data.pla2}}" class="form-control myInput">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="email" placeholder="{{data.pla3}}" class="form-control myInput">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="text" placeholder="{{data.pla4}}" class="form-control myInput">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <select class="form-control mySelect">
+                  <option  *ngFor="let treat of array" value="{{treat}}">{{treat}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="">{{data.enter}}</label>
+                <textarea name="" class="myArea" id="" cols="30" rows="10"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <button class="btn btn-default btn-submit" (click)="message()">{{data.submit}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+-->
+<div class="rel">
+  <div class="special-box">
+    <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles" [zoom]="zoom">
+      <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="'assets/img/pin.png'"></agm-marker>
+    </agm-map>
+    <div class="overmap" (click)="hideme()"></div>
+  </div>
+  <div class="info-box">
+    <h3>{{data.name}}</h3><br><br>
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <p class="up semi">{{data.h1}}</p>
+      </div>
+      <div class="col-md-9 col-sm-6">
+        <p>{{data.h2}}</p>
+        <p class="underline up">{{data.h3}}</p>
+        <p>T: <span class="underline">{{data.h4}}</span></p>
+        <p>E: <a href="mailto:staff@revivamd.com">{{data.h5}}</a></p>
+      </div>
+    </div>
+    <div class="row hours">
+      <div class="col-md-3 col-sm-6">
+        <p class="up semi">{{data.h6}}</p>
+      </div>
+      <div class="col-md-9 col-sm-6">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>{{data.h7}}</td>
+              <td>{{data.t1}}</td>
+            </tr>
+            <tr>
+              <td>{{data.h8}}</td>
+              <td>{{data.t2}}</td>
+            </tr>
+            <tr>
+              <td>{{data.h9}}</td>
+              <td>{{data.t3}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
